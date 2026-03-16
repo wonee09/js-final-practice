@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지출 관리 앱</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>지출 관리</h1>
+
+    <!-- 메시지 영역 -->
+    <div id="message" class="message" style="display: none;"></div>
+
+    <!-- 지출 추가/수정 폼 -->
+    <form id="expense-form">
+      <div class="form-row">
+        <input type="date" id="date" required />
+        <select id="category" required>
+          <option value="">카테고리 선택</option>
+          <option value="식비">식비</option>
+          <option value="교통">교통</option>
+          <option value="쇼핑">쇼핑</option>
+          <option value="문화">문화</option>
+          <option value="기타">기타</option>
+        </select>
+        <input type="text" id="description" placeholder="설명" required />
+        <input type="number" id="amount" placeholder="금액" min="0" required />
+        <button type="submit" id="submit-btn">추가</button>
+        <button type="button" id="cancel-btn" style="display: none;">취소</button>
+      </div>
+    </form>
+
+    <!-- 필터 + 정렬 -->
+    <div class="controls">
+      <div class="filter-section" id="filter-section">
+        <button class="filter-btn active" data-category="전체">전체</button>
+        <button class="filter-btn" data-category="식비">식비</button>
+        <button class="filter-btn" data-category="교통">교통</button>
+        <button class="filter-btn" data-category="쇼핑">쇼핑</button>
+        <button class="filter-btn" data-category="문화">문화</button>
+        <button class="filter-btn" data-category="기타">기타</button>
+      </div>
+      <div class="sort-section">
+        <select id="sort-select">
+          <option value="date-desc">날짜 최신순</option>
+          <option value="date-asc">날짜 오래된순</option>
+          <option value="amount-desc">금액 높은순</option>
+          <option value="amount-asc">금액 낮은순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 통계 영역 -->
+    <div class="stats-section">
+      <div class="stat-card">
+        <h3>총 지출</h3>
+        <p id="total-amount" class="stat-value">0원</p>
+      </div>
+      <div class="stat-card">
+        <h3>카테고리별</h3>
+        <div id="category-stats"></div>
+      </div>
+      <div class="stat-card">
+        <h3>평균 지출</h3>
+        <p id="average-amount" class="stat-value">0원</p>
+      </div>
+    </div>
+
+    <!-- 지출 목록 -->
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>카테고리</th>
+          <th>설명</th>
+          <th>금액</th>
+          <th>수정</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="expense-list"></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

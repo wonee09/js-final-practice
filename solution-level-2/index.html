@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>지출 관리 앱</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>지출 관리</h1>
+
+    <!-- 지출 추가/수정 폼 -->
+    <form id="expense-form">
+      <div class="form-row">
+        <input type="date" id="date" required />
+        <select id="category" required>
+          <option value="">카테고리 선택</option>
+          <option value="식비">식비</option>
+          <option value="교통">교통</option>
+          <option value="쇼핑">쇼핑</option>
+          <option value="문화">문화</option>
+          <option value="기타">기타</option>
+        </select>
+        <input type="text" id="description" placeholder="설명" required />
+        <input type="number" id="amount" placeholder="금액" min="0" required />
+        <button type="submit" id="submit-btn">추가</button>
+      </div>
+    </form>
+
+    <!-- 카테고리 필터 -->
+    <div class="filter-section" id="filter-section">
+      <button class="filter-btn active" data-category="전체">전체</button>
+      <button class="filter-btn" data-category="식비">식비</button>
+      <button class="filter-btn" data-category="교통">교통</button>
+      <button class="filter-btn" data-category="쇼핑">쇼핑</button>
+      <button class="filter-btn" data-category="문화">문화</button>
+      <button class="filter-btn" data-category="기타">기타</button>
+    </div>
+
+    <!-- 총 지출 합계 -->
+    <div class="total-section">
+      <span>총 지출:</span>
+      <span id="total-amount">0원</span>
+    </div>
+
+    <!-- 지출 목록 -->
+    <table class="expense-table">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>카테고리</th>
+          <th>설명</th>
+          <th>금액</th>
+          <th>수정</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="expense-list"></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

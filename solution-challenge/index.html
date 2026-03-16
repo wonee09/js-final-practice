@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>수입/지출 관리 앱</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 로딩 오버레이 -->
+  <div id="loading" class="loading-overlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>로딩 중...</p>
+  </div>
+
+  <!-- 메시지 토스트 -->
+  <div id="message" class="message" style="display: none;"></div>
+
+  <div class="container">
+    <h1>수입/지출 관리</h1>
+
+    <!-- 추가/수정 폼 -->
+    <form id="transaction-form">
+      <div class="form-row">
+        <select id="type" required>
+          <option value="">유형 선택</option>
+          <option value="income">수입</option>
+          <option value="expense">지출</option>
+        </select>
+        <input type="date" id="date" required />
+        <select id="category" required>
+          <option value="">카테고리 선택</option>
+        </select>
+        <input type="text" id="description" placeholder="설명" required />
+        <input type="number" id="amount" placeholder="금액" min="0" required />
+        <button type="submit" id="submit-btn">추가</button>
+        <button type="button" id="cancel-btn" style="display: none;">취소</button>
+      </div>
+    </form>
+
+    <!-- 검색 -->
+    <div class="search-section">
+      <input type="text" id="search" placeholder="설명으로 검색..." />
+    </div>
+
+    <!-- 타입 필터 + 카테고리 필터 + 정렬 -->
+    <div class="filter-row">
+      <div class="filter-group" id="type-filters">
+        <button class="type-btn active" data-type="전체">전체</button>
+        <button class="type-btn" data-type="income">수입</button>
+        <button class="type-btn" data-type="expense">지출</button>
+      </div>
+      <div class="filter-group" id="category-filters">
+        <button class="category-btn active" data-category="전체">전체</button>
+      </div>
+      <div class="sort-group">
+        <select id="sort-select">
+          <option value="date-desc">날짜 최신순</option>
+          <option value="date-asc">날짜 오래된순</option>
+          <option value="amount-desc">금액 높은순</option>
+          <option value="amount-asc">금액 낮은순</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 대시보드 -->
+    <div class="dashboard">
+      <div class="dash-card income-card">
+        <h3>총 수입</h3>
+        <p id="total-income">0원</p>
+      </div>
+      <div class="dash-card expense-card">
+        <h3>총 지출</h3>
+        <p id="total-expense">0원</p>
+      </div>
+      <div class="dash-card balance-card">
+        <h3>잔액</h3>
+        <p id="balance">0원</p>
+      </div>
+    </div>
+
+    <!-- 월별 통계 -->
+    <div class="section-card">
+      <h2>월별 통계</h2>
+      <div id="monthly-stats"></div>
+    </div>
+
+    <!-- 카테고리별 통계 -->
+    <div class="section-card">
+      <h2>카테고리별 통계</h2>
+      <div id="category-stats"></div>
+    </div>
+
+    <!-- 일괄 작업 -->
+    <div class="bulk-actions">
+      <label><input type="checkbox" id="select-all" /> 전체선택</label>
+      <button id="bulk-delete" class="btn-bulk-delete">선택 삭제</button>
+    </div>
+
+    <!-- 거래 내역 테이블 -->
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>날짜</th>
+          <th>유형</th>
+          <th>카테고리</th>
+          <th>설명</th>
+          <th>금액</th>
+          <th>수정</th>
+          <th>삭제</th>
+        </tr>
+      </thead>
+      <tbody id="transaction-list"></tbody>
+    </table>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "type": "income",
+      "date": "2024-03-01",
+      "category": "급여",
+      "description": "3월 급여",
+      "amount": 3000000
+    },
+    {
+      "id": 2,
+      "type": "expense",
+      "date": "2024-03-02",
+      "category": "식비",
+      "description": "점심 식사",
+      "amount": 12000
+    },
+    {
+      "id": 3,
+      "type": "expense",
+      "date": "2024-03-03",
+      "category": "교통",
+      "description": "지하철 정기권",
+      "amount": 55000
+    },
+    {
+      "id": 4,
+      "type": "expense",
+      "date": "2024-03-05",
+      "category": "쇼핑",
+      "description": "운동화 구매",
+      "amount": 89000
+    },
+    {
+      "id": 5,
+      "type": "income",
+      "date": "2024-03-10",
+      "category": "용돈",
+      "description": "부모님 용돈",
+      "amount": 200000
+    },
+    {
+      "id": 6,
+      "type": "expense",
+      "date": "2024-03-12",
+      "category": "문화",
+      "description": "영화 관람",
+      "amount": 15000
+    },
+    {
+      "id": 7,
+      "type": "expense",
+      "date": "2024-03-15",
+      "category": "식비",
+      "description": "카페 커피",
+      "amount": 4500
+    },
+    {
+      "id": 8,
+      "type": "expense",
+      "date": "2024-02-01",
+      "category": "기타",
+      "description": "문구류",
+      "amount": 8000
+    },
+    {
+      "id": 9,
+      "type": "income",
+      "date": "2024-02-01",
+      "category": "급여",
+      "description": "2월 급여",
+      "amount": 3000000
+    },
+    {
+      "id": 10,
+      "type": "expense",
+      "date": "2024-02-15",
+      "category": "쇼핑",
+      "description": "책 구매",
+      "amount": 25000
+    }
+  ],
+  "categories": [
+    { "id": 1, "type": "expense", "name": "식비" },
+    { "id": 2, "type": "expense", "name": "교통" },
+    { "id": 3, "type": "expense", "name": "쇼핑" },
+    { "id": 4, "type": "expense", "name": "문화" },
+    { "id": 5, "type": "expense", "name": "기타" },
+    { "id": 6, "type": "income", "name": "급여" },
+    { "id": 7, "type": "income", "name": "용돈" },
+    { "id": 8, "type": "income", "name": "기타수입" }
+  ]
+}

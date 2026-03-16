@@ -1,0 +1,46 @@
+{
+  "expenses": [
+    {
+      "id": 1,
+      "date": "2024-03-01",
+      "category": "식비",
+      "description": "점심 식사",
+      "amount": 12000
+    },
+    {
+      "id": 2,
+      "date": "2024-03-02",
+      "category": "교통",
+      "description": "지하철 정기권",
+      "amount": 55000
+    },
+    {
+      "id": 3,
+      "date": "2024-03-05",
+      "category": "쇼핑",
+      "description": "운동화 구매",
+      "amount": 89000
+    },
+    {
+      "id": 4,
+      "date": "2024-03-07",
+      "category": "문화",
+      "description": "영화 관람",
+      "amount": 15000
+    },
+    {
+      "id": 5,
+      "date": "2024-03-10",
+      "category": "식비",
+      "description": "카페 커피",
+      "amount": 4500
+    },
+    {
+      "id": 6,
+      "date": "2024-03-12",
+      "category": "기타",
+      "description": "문구류 구입",
+      "amount": 8000
+    }
+  ]
+}

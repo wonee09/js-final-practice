@@ -1,0 +1,11 @@
+{
+  "name": "budget-tracker-challenge",
+  "version": "1.0.0",
+  "description": "수입/지출 관리 앱 - Challenge",
+  "scripts": {
+    "start": "npx json-server --watch db.json --port 4000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

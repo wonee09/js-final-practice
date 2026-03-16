@@ -1,0 +1,11 @@
+{
+  "name": "expense-tracker-level-3",
+  "version": "1.0.0",
+  "description": "지출 관리 앱 - Level 3",
+  "scripts": {
+    "start": "npx json-server --watch db.json --port 4000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}
